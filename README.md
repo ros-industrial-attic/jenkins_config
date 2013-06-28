@@ -8,6 +8,13 @@ Restarting jenkins from a terminal
 		/etc/init.d/jenkins
 
 ============================
+Login as jenkins user
+	- Type the following to login as jenkins:
+		sudo su jenkins
+	- Once you login as jenkins you can go to the jenkins home directory:
+		cd
+
+============================
 Access jenkins from a browser
 	
 	- Open a browser and enter "http://localhost:8080/" in the address bar
@@ -25,7 +32,7 @@ See: https://wiki.jenkins-ci.org/display/JENKINS/Administering+Jenkins#Administe
 
 ============================
 List of jenkins plugins
-	The following plugins must be install:
+	- The following plugins must be install:
 
 		GitHub Plugin
 		Jenkins Multiple SCMs plugin
