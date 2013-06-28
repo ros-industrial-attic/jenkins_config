@@ -23,5 +23,14 @@ Exporting a jenkins job
 
 See: https://wiki.jenkins-ci.org/display/JENKINS/Administering+Jenkins#AdministeringJenkins-Moving/copying/renamingjobs
 
+============================
+List of jenkins plugins
+	The following plugins must be install:
 
-
+		GitHub Plugin
+		Jenkins Multiple SCMs plugin
+		Warnings plugin
+		Static Code Analysis Plug-ins
+		Plot Plugin
+		Violations Plugin
+		Cppcheck Plugin
