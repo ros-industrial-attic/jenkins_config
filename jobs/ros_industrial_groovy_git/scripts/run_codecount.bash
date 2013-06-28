@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#path to scripts directory
+JOB_SCRIPTS_PATH=${JENKINS_HOME}/jobs/${JOB_NAME}/scripts
+
 # clear file
 echo "" > ${WORKSPACE}/cpp_code.count
 echo "" > ${WORKSPACE}/cpp_comments.count

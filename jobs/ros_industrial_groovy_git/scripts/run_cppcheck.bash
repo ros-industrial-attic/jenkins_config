@@ -1,5 +1,9 @@
 #!/bin/bash
 # CPP Check
+
+#path to scripts directory
+JOB_SCRIPTS_PATH=${JENKINS_HOME}/jobs/${JOB_NAME}/scripts
+
 echo "===== Performing CPP check ====="
 
 if [ -f ${WORKSPACE}/cppcheck.xml ];
