@@ -155,7 +155,7 @@ source $JOB_SCRIPTS_PATH&quot;/run_workspace_setup.bash&quot;
 source $JOB_SCRIPTS_PATH&quot;/run_cpplint.bash&quot; $WORKSPACE&quot;/src&quot;
 
 # Counting lines of code/comments
-source $JOB_SCRIPTS_PATH&quot;/scripts/run_codecount.bash&quot; $WORKSPACE&quot;/src&quot;
+source $JOB_SCRIPTS_PATH&quot;/run_codecount.bash&quot; $WORKSPACE&quot;/src&quot;
 
 # CPP check
 source $JOB_SCRIPTS_PATH&quot;/run_cppcheck.bash&quot; $WORKSPACE&quot;/src&quot;
