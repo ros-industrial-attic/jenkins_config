@@ -23,16 +23,5 @@ Exporting a jenkins job
 
 See: https://wiki.jenkins-ci.org/display/JENKINS/Administering+Jenkins#AdministeringJenkins-Moving/copying/renamingjobs
 
-============================
-Restore entire jenkins setup from a backup in the repo
-
-	- Close any running instances of jenkins, including browsers and terminals 
-	- Find jenkins home directory, from a terminal type the following to print the absolute path of the jenkins home:
-		sudo su jenkins 
-		cd 
-		pwd
-	- Copy all the contents of a jenkins home directory backup under the "jenkins_settings" in the repo into the jenkins home directory in your local machine.
-	- Open jenkins from a browser
-	- Copy jobs as needed
 
 
