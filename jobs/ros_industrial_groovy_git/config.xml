@@ -145,17 +145,20 @@
 echo &quot;Job name:    &quot;$JOB_NAME
 echo &quot;Workspace:   &quot;$WORKSPACE
 
+#path to scripts directory
+JOB_SCRIPTS_PATH=${JENKINS_HOME}/jobs/${JOB_NAME}/scripts
+
 # initialize ROS and build catkin ws
-source $WORKSPACE&quot;/../scripts/run_workspace_setup.bash&quot;
+source $JOB_SCRIPTS_PATH&quot;/run_workspace_setup.bash&quot;
 
 # Cpplint
-source $WORKSPACE&quot;/../scripts/run_cpplint.bash&quot; $WORKSPACE&quot;/src&quot;
+source $JOB_SCRIPTS_PATH&quot;/run_cpplint.bash&quot; $WORKSPACE&quot;/src&quot;
 
 # Counting lines of code/comments
-source $WORKSPACE&quot;/../scripts/run_codecount.bash&quot; $WORKSPACE&quot;/src&quot;
+source $JOB_SCRIPTS_PATH&quot;/scripts/run_codecount.bash&quot; $WORKSPACE&quot;/src&quot;
 
 # CPP check
-source $WORKSPACE&quot;/../scripts/run_cppcheck.bash&quot; $WORKSPACE&quot;/src&quot;
+source $JOB_SCRIPTS_PATH&quot;/run_cppcheck.bash&quot; $WORKSPACE&quot;/src&quot;
 
 # Coverage
 #source $WORKSPACE&quot;/../scripts/run_gcorv.bash&quot; $WORKSPACE&quot;/src&quot;

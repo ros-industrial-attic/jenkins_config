@@ -3,7 +3,7 @@ jenkins_config
 Instructions to configure jenkins for building ros industrial repos
 
 ==============
-Requirements packages
+Required packages
 	- ros-groovy
 	- Moveit 
 	- Moveit for pr2 binaries 
@@ -48,10 +48,10 @@ Requirements packages
 ============================
 6 - Exporting a jenkins job
 
-	- Login as the jenkins user 
+	- Open a terminal  and login as the jenkins user 
 		sudo su jenkins
 
-	- Find the jenkins home directory
+	- Find/Print the jenkins home directory
 		cd && pwd
 
 	- Copy an entire folder from the "jobs" directory in the repo into the "jobs" directory in the jenkins home
