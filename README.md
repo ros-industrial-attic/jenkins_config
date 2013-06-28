@@ -56,22 +56,26 @@ Installation steps
 6. Exporting a jenkins job
 -------------
 
-+	Open a terminal  and login as the jenkins user
-			sudo su jenkins
++ Open a terminal  and login as the jenkins user
+		sudo su jenkins
 
-+	Find/Print the jenkins home directory
-			cd && pwd
 
-+	Copy an entire folder from the "jobs" directory in the repo into the "jobs" directory in the jenkins home
-			sudo cp [repo path]/jobs/ros_industrial_groovy_git [jenkins home path]/jobs
++ Find/Print the jenkins home directory
+		cd && pwd
 
-+	Modify job directory access mode (Don't run the following as the jenkins user)
-			sudo chmod a+rwx -R [jenkins home path]/jobs
 
-+	In the jenkins browser, go to jenkins home and then:
-	+	Manage Jenkins -> Reload Configuration from Disk
++ Copy an entire folder from the "jobs" directory in the repo into the "jobs" directory in the jenkins home
+		sudo cp [repo path]/jobs/ros_industrial_groovy_git [jenkins home path]/jobs
 
-+	Return to the jenkins home and you should see your job listed on the right hand side of the page.
+
++ Modify job directory access mode (Don't run the following as the jenkins user)
+		sudo chmod a+rwx -R [jenkins home path]/jobs
+
+
++ In the jenkins browser, go to jenkins home and then:
+	+ Manage Jenkins -> Reload Configuration from Disk
+
++ Return to the jenkins home and you should see your job listed on the right hand side of the page.
 
 See: https://wiki.jenkins-ci.org/display/JENKINS/Administering+Jenkins#AdministeringJenkins-Moving/copying/renamingjobs
 
@@ -81,13 +85,13 @@ Jenkins tips
 ==============
 Login as the jenkins user
 -------------
-			sudo su jenkins
+		sudo su jenkins
 
 Go to the jenkins home
 -------------
-			sudo su jenkins
-			cd
+		sudo su jenkins
+		cd
 
 Force a jenkins restart from a terminal
 -------------
-			sudo /etc/init.d/jenkins restart
+		sudo /etc/init.d/jenkins restart
