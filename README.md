@@ -57,18 +57,22 @@ Installation steps
 -------------
 
 + Open a terminal  and login as the jenkins user
+
 		sudo su jenkins
 
 
 + Find/Print the jenkins home directory
+
 		cd && pwd
 
 
 + Copy an entire folder from the "jobs" directory in the repo into the "jobs" directory in the jenkins home
+
 		sudo cp [repo path]/jobs/ros_industrial_groovy_git [jenkins home path]/jobs
 
 
 + Modify job directory access mode (Don't run the following as the jenkins user)
+
 		sudo chmod a+rwx -R [jenkins home path]/jobs
 
 
