@@ -2,6 +2,9 @@
 # Setup
 source /opt/ros/groovy/setup.bash
 
+# branch
+BRANCH_NAME=$1
+
 # checking if catkin ws is already initialized
 cd $WORKSPACE # entering job workspace
 JOB_SCRIPTS_PATH=${JENKINS_HOME}/jobs/${JOB_NAME}/scripts
@@ -33,7 +36,7 @@ else
 	#rosws set ../src/industrial_core/ --git https://github.com/ros-industrial/industrial_core.git -y
 	
 	cd "$WORKSPACE/devel"
-	cat "$JOB_SCRIPTS_PATH/repository_list.txt" | awk -F',' '{system("rosws set "$1" --git "$2" -y"); print "added repository ", $2, " in local path ", $1}'
+	cat "$JOB_SCRIPTS_PATH/repository_list.txt" | awk -F',' '{system("rosws set "$1" --git "$2" -v "$3" -y "); print "added repository ", $2, " in local path ", $1}'
 
 	#sourcing setup file
 	source $SETUP_FILE	
