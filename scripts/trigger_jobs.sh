@@ -4,9 +4,18 @@ export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:$PATH
 # variables
 JENKINS_HOME=/var/lib/jenkins
 SCRIPTS_PATH=${JENKINS_HOME}/jenkins_config/scripts
+JENKINS_CLI=${JENKINS_HOME}/jenkins-cli.jar
 
-echo Running trigger jenkins cron job ...
+echo "updating jenkins_config repository"
 cd ${JENKINS_HOME}/jenkins_config && git pull &>/dev/null
+
+if [ ! -f $JENKINS_CLI ];
+then
+	echo "downloading jenkins-cli.jar"
+	cd ${JENKINS_HOME}
+	wget http://localhost:8080/jnlpJars/jenkins-cli.jar
+fi
+
 
 # creating jobs
 for F in ${JENKINS_HOME}/jenkins_config/workspaces/*; do
