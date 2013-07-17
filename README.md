@@ -1,4 +1,4 @@
-Jenkins Configuration Instructions
+	Jenkins Configuration Instructions
 ==============
 Instructions to configure jenkins for building ros industrial repos
 
@@ -53,7 +53,7 @@ Installation steps
 +	Hit the "Save" or "Apply" buttom at the end of the page.
 
 
-6. Exporting a jenkins job
+6. Creating jenkins jobs
 -------------
 
 + Open a terminal  and login as the jenkins user
@@ -61,28 +61,15 @@ Installation steps
 		sudo su jenkins
 
 
-+ Find/Print the jenkins home directory
-
-		cd && pwd
-
-
-+ Copy an entire folder from the "jobs" directory in the repo into the "jobs" directory in the jenkins home
-
-		sudo cp [repo path]/jobs/ros_industrial_groovy_git [jenkins home path]/jobs
++ Clone the "jenkins_config" repository
+                
+        cd
+	    git clone https://github.com/ros-industrial/jenkins_config.git jenkins_config
 
 
-+ Modify job directory access mode (Don't run the following as the jenkins user)
++ Change mode for all the files in the "jenkins_config" repository
 
-		sudo chmod a+rwx -R [jenkins home path]/jobs
-
-
-+ In the jenkins browser, go to jenkins home and then:
-	+ Manage Jenkins -> Reload Configuration from Disk
-
-+ Return to the jenkins home and you should see your job listed on the right hand side of the page.
-
-See: https://wiki.jenkins-ci.org/display/JENKINS/Administering+Jenkins#AdministeringJenkins-Moving/copying/renamingjobs
-
+		chmod a+rwx -R jenkins_config
 
 
 Jenkins tips
