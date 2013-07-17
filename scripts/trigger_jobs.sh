@@ -30,7 +30,8 @@ for D in ${JENKINS_HOME}/jobs/*; do
 	  then
 	    echo Triggering $job
 	    chmod a+rwx -R $D/workspace
-	    wget http://localhost:8080/job/$job/build?delay=0sec #&>/dev/null
+	    #wget http://localhost:8080/job/$job/build?delay=0sec #&>/dev/null
+	    java -jar jenkins-cli.jar -s http://localhost:8080 build $job
 	  else
 	    echo $job already up to date.
 	  fi
