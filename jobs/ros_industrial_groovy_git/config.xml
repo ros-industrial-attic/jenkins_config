@@ -1,143 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <project>
   <actions/>
-  <description>Builds and tests ROS-Industrial repos in github</description>
-  <logRotator class="hudson.tasks.LogRotator">
-    <daysToKeep>-1</daysToKeep>
-    <numToKeep>10</numToKeep>
-    <artifactDaysToKeep>-1</artifactDaysToKeep>
-    <artifactNumToKeep>-1</artifactNumToKeep>
-  </logRotator>
+  <description></description>
   <keepDependencies>false</keepDependencies>
-  <properties>
-    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.6">
-      <projectUrl>https://github.com/ros-industrial/</projectUrl>
-    </com.coravy.hudson.plugins.github.GithubProjectProperty>
-  </properties>
-  <scm class="org.jenkinsci.plugins.multiplescms.MultiSCM" plugin="multiple-scms@0.2">
-    <scms>
-      <hudson.plugins.git.GitSCM plugin="git@1.4.0">
-        <configVersion>2</configVersion>
-        <userRemoteConfigs>
-          <hudson.plugins.git.UserRemoteConfig>
-            <name></name>
-            <refspec>+refs/heads/groovy-devel:refs/remotes/origin/groovy-devel</refspec>
-            <url>https://github.com/ros-industrial/industrial_core.git</url>
-          </hudson.plugins.git.UserRemoteConfig>
-        </userRemoteConfigs>
-        <branches>
-          <hudson.plugins.git.BranchSpec>
-            <name>*/groovy-devel</name>
-          </hudson.plugins.git.BranchSpec>
-        </branches>
-        <disableSubmodules>false</disableSubmodules>
-        <recursiveSubmodules>false</recursiveSubmodules>
-        <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
-        <authorOrCommitter>false</authorOrCommitter>
-        <clean>false</clean>
-        <wipeOutWorkspace>false</wipeOutWorkspace>
-        <pruneBranches>false</pruneBranches>
-        <remotePoll>false</remotePoll>
-        <ignoreNotifyCommit>false</ignoreNotifyCommit>
-        <useShallowClone>false</useShallowClone>
-        <buildChooser class="hudson.plugins.git.util.DefaultBuildChooser"/>
-        <gitTool>Default</gitTool>
-        <submoduleCfg class="list"/>
-        <relativeTargetDir>src/industrial_core</relativeTargetDir>
-        <reference></reference>
-        <excludedRegions></excludedRegions>
-        <excludedUsers></excludedUsers>
-        <gitConfigName></gitConfigName>
-        <gitConfigEmail></gitConfigEmail>
-        <skipTag>false</skipTag>
-        <includedRegions></includedRegions>
-        <scmName></scmName>
-      </hudson.plugins.git.GitSCM>
-      <hudson.plugins.git.GitSCM plugin="git@1.4.0">
-        <configVersion>2</configVersion>
-        <userRemoteConfigs>
-          <hudson.plugins.git.UserRemoteConfig>
-            <name></name>
-            <refspec>+refs/heads/groovy-devel:refs/remotes/origin/groovy-devel</refspec>
-            <url>https://github.com/ros-industrial/motoman.git</url>
-          </hudson.plugins.git.UserRemoteConfig>
-        </userRemoteConfigs>
-        <branches>
-          <hudson.plugins.git.BranchSpec>
-            <name>*/groovy-devel</name>
-          </hudson.plugins.git.BranchSpec>
-        </branches>
-        <disableSubmodules>false</disableSubmodules>
-        <recursiveSubmodules>false</recursiveSubmodules>
-        <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
-        <authorOrCommitter>false</authorOrCommitter>
-        <clean>false</clean>
-        <wipeOutWorkspace>false</wipeOutWorkspace>
-        <pruneBranches>false</pruneBranches>
-        <remotePoll>false</remotePoll>
-        <ignoreNotifyCommit>false</ignoreNotifyCommit>
-        <useShallowClone>false</useShallowClone>
-        <buildChooser class="hudson.plugins.git.util.DefaultBuildChooser"/>
-        <gitTool>Default</gitTool>
-        <submoduleCfg class="list"/>
-        <relativeTargetDir>src/motoman</relativeTargetDir>
-        <reference></reference>
-        <excludedRegions></excludedRegions>
-        <excludedUsers></excludedUsers>
-        <gitConfigName></gitConfigName>
-        <gitConfigEmail></gitConfigEmail>
-        <skipTag>false</skipTag>
-        <includedRegions></includedRegions>
-        <scmName></scmName>
-      </hudson.plugins.git.GitSCM>
-      <hudson.plugins.git.GitSCM plugin="git@1.4.0">
-        <configVersion>2</configVersion>
-        <userRemoteConfigs>
-          <hudson.plugins.git.UserRemoteConfig>
-            <name></name>
-            <refspec>+refs/heads/groovy-devel:refs/remotes/origin/groovy-devel</refspec>
-            <url>https://github.com/ros-industrial/abb.git</url>
-          </hudson.plugins.git.UserRemoteConfig>
-        </userRemoteConfigs>
-        <branches>
-          <hudson.plugins.git.BranchSpec>
-            <name>*/groovy-devel</name>
-          </hudson.plugins.git.BranchSpec>
-        </branches>
-        <disableSubmodules>false</disableSubmodules>
-        <recursiveSubmodules>false</recursiveSubmodules>
-        <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
-        <authorOrCommitter>false</authorOrCommitter>
-        <clean>false</clean>
-        <wipeOutWorkspace>false</wipeOutWorkspace>
-        <pruneBranches>false</pruneBranches>
-        <remotePoll>false</remotePoll>
-        <ignoreNotifyCommit>false</ignoreNotifyCommit>
-        <useShallowClone>false</useShallowClone>
-        <buildChooser class="hudson.plugins.git.util.DefaultBuildChooser"/>
-        <gitTool>Default</gitTool>
-        <submoduleCfg class="list"/>
-        <relativeTargetDir>src/abb</relativeTargetDir>
-        <reference></reference>
-        <excludedRegions></excludedRegions>
-        <excludedUsers></excludedUsers>
-        <gitConfigName></gitConfigName>
-        <gitConfigEmail></gitConfigEmail>
-        <skipTag>false</skipTag>
-        <includedRegions></includedRegions>
-        <scmName></scmName>
-      </hudson.plugins.git.GitSCM>
-    </scms>
-  </scm>
+  <properties/>
+  <scm class="hudson.scm.NullSCM"/>
   <canRoam>true</canRoam>
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
-  <triggers class="vector">
-    <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.6">
-      <spec></spec>
-    </com.cloudbees.jenkins.GitHubPushTrigger>
-  </triggers>
+  <triggers class="vector"/>
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
@@ -146,10 +18,10 @@ echo &quot;Job name:    &quot;$JOB_NAME
 echo &quot;Workspace:   &quot;$WORKSPACE
 
 #path to scripts directory
-JOB_SCRIPTS_PATH=${JENKINS_HOME}/jobs/${JOB_NAME}/scripts
+JOB_SCRIPTS_PATH=/var/lib/jenkins/jenkins_config/scripts
 
 # initialize ROS and build catkin ws
-source $JOB_SCRIPTS_PATH&quot;/run_workspace_setup.bash&quot;
+source $JOB_SCRIPTS_PATH&quot;/build_catkin_workspace.sh&quot;
 
 # Cpplint
 source $JOB_SCRIPTS_PATH&quot;/run_cpplint.bash&quot; $WORKSPACE&quot;/src&quot;
@@ -161,9 +33,7 @@ source $JOB_SCRIPTS_PATH&quot;/run_codecount.bash&quot; $WORKSPACE&quot;/src&quo
 source $JOB_SCRIPTS_PATH&quot;/run_cppcheck.bash&quot; $WORKSPACE&quot;/src&quot;
 
 # Coverage
-#source $WORKSPACE&quot;/../scripts/run_gcorv.bash&quot; $WORKSPACE&quot;/src&quot;
-
-</command>
+#source $WORKSPACE&quot;/../scripts/run_gcorv.bash&quot; $WORKSPACE&quot;/src&quot;</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
@@ -221,13 +91,42 @@ source $JOB_SCRIPTS_PATH&quot;/run_cppcheck.bash&quot; $WORKSPACE&quot;/src&quot
           </series>
           <group>Line count group</group>
           <numBuilds>100</numBuilds>
-          <csvFileName>1782089577.csv</csvFileName>
+          <csvFileName>190485126.csv</csvFileName>
           <csvLastModification>0</csvLastModification>
           <style>stackedbar</style>
           <useDescr>false</useDescr>
         </hudson.plugins.plot.Plot>
       </plots>
     </hudson.plugins.plot.PlotPublisher>
+    <org.jenkinsci.plugins.cppcheck.CppcheckPublisher plugin="cppcheck@1.13">
+      <cppcheckConfig>
+        <pattern>cppcheck.xml</pattern>
+        <ignoreBlankFiles>false</ignoreBlankFiles>
+        <configSeverityEvaluation>
+          <threshold></threshold>
+          <newThreshold></newThreshold>
+          <failureThreshold></failureThreshold>
+          <newFailureThreshold></newFailureThreshold>
+          <healthy></healthy>
+          <unHealthy></unHealthy>
+          <severityError>true</severityError>
+          <severityWarning>true</severityWarning>
+          <severityStyle>true</severityStyle>
+          <severityPerformance>true</severityPerformance>
+          <severityInformation>true</severityInformation>
+        </configSeverityEvaluation>
+        <configGraph>
+          <xSize>500</xSize>
+          <ySize>200</ySize>
+          <displayAllErrors>true</displayAllErrors>
+          <displayErrorSeverity>false</displayErrorSeverity>
+          <displayWarningSeverity>false</displayWarningSeverity>
+          <displayStyleSeverity>false</displayStyleSeverity>
+          <displayPerformanceSeverity>false</displayPerformanceSeverity>
+          <displayInformationSeverity>false</displayInformationSeverity>
+        </configGraph>
+      </cppcheckConfig>
+    </org.jenkinsci.plugins.cppcheck.CppcheckPublisher>
     <hudson.plugins.violations.ViolationsPublisher plugin="violations@0.7.11">
       <config>
         <suppressions class="sorted-set"/>
@@ -415,35 +314,6 @@ source $JOB_SCRIPTS_PATH&quot;/run_cppcheck.bash&quot; $WORKSPACE&quot;/src&quot
         <encoding>default</encoding>
       </config>
     </hudson.plugins.violations.ViolationsPublisher>
-    <org.jenkinsci.plugins.cppcheck.CppcheckPublisher plugin="cppcheck@1.13">
-      <cppcheckConfig>
-        <pattern>cppcheck.xml</pattern>
-        <ignoreBlankFiles>false</ignoreBlankFiles>
-        <configSeverityEvaluation>
-          <threshold></threshold>
-          <newThreshold></newThreshold>
-          <failureThreshold></failureThreshold>
-          <newFailureThreshold></newFailureThreshold>
-          <healthy></healthy>
-          <unHealthy></unHealthy>
-          <severityError>true</severityError>
-          <severityWarning>true</severityWarning>
-          <severityStyle>true</severityStyle>
-          <severityPerformance>true</severityPerformance>
-          <severityInformation>true</severityInformation>
-        </configSeverityEvaluation>
-        <configGraph>
-          <xSize>500</xSize>
-          <ySize>200</ySize>
-          <displayAllErrors>true</displayAllErrors>
-          <displayErrorSeverity>true</displayErrorSeverity>
-          <displayWarningSeverity>true</displayWarningSeverity>
-          <displayStyleSeverity>true</displayStyleSeverity>
-          <displayPerformanceSeverity>true</displayPerformanceSeverity>
-          <displayInformationSeverity>true</displayInformationSeverity>
-        </configGraph>
-      </cppcheckConfig>
-    </org.jenkinsci.plugins.cppcheck.CppcheckPublisher>
   </publishers>
   <buildWrappers/>
 </project>
