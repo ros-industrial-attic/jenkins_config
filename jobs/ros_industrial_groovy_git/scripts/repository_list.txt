@@ -1,3 +1,0 @@
-../src/industrial_core,https://github.com/ros-industrial/industrial_core.git,groovy-devel
-../src/abb,https://github.com/ros-industrial/abb.git,groovy-devel
-../src/motoman,https://github.com/ros-industrial/motoman.git,groovy-devel
