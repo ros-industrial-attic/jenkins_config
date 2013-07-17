@@ -5,7 +5,7 @@ JENKINS_HOME=/var/lib/jenkins
 SCRIPTS_PATH=${JENKINS_HOME}/jenkins_config/scripts
 CATKIN_WORKSPACE=$1
 JOB_NAME=$2
-JOB_WORKSPACE_FILE=${JENKINS_HOME}/jenkins_config/workspaces/${JOB_NAME}.workspace
+JOB_WORKSPACE_FILE=${JENKINS_HOME}/jenkins_config/workspaces/${JOB_NAME}.rosinstall
 CATKIN_SETUP_FILE=${CATKIN_WORKSPACE}/devel/setup.bash
 
 # check if setup file for catkin workspace exists
