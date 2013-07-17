@@ -14,7 +14,7 @@ then
 	cp ${CONFIG_FILE_PATH} ${JOB_PATH}
 
 	# reloading configuration
-	wget http://localhost:8080/jnlpJars/jenkins-cli.jar
+	#wget http://localhost:8080/jnlpJars/jenkins-cli.jar
 	java -jar jenkins-cli.jar -s http://localhost:8080 reload-configuration
 
 	echo "Created new jenkins job $JOB_NAME"
