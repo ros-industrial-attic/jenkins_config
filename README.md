@@ -53,7 +53,7 @@ Installation steps
 +	Hit the "Save" or "Apply" buttom at the end of the page.
 
 
-6. Creating jenkins jobs
+6. Installing the "jenkins_config" repo
 -------------
 
 + Open a terminal  and login as the jenkins user
@@ -67,10 +67,25 @@ Installation steps
 	    git clone https://github.com/ros-industrial/jenkins_config.git jenkins_config
 
 
-+ Change mode for all the files in the "jenkins_config" repository
++ Open the crontab file for editing
 
-		chmod a+rwx -R jenkins_config
+        crontab -e
 
+  When asked to "Select and editor" enter "2" for nano.
+
++ Append the following lines to the cron file in order to run the trigger script every 5 minutes
+
+		*/5 * * * * echo "log time: "$(date +%m-%d-%Y)", "$(date +%T) > /var/lib/jenkins/cron_log.txt
+        */5 * * * * /bin/bash /var/lib/jenkins/jenkins_config/scripts/trigger_jobs.sh >> /var/lib/jenkins/cron_log.txt
+
+  Save the cron file once the changes have been made.  From this point on, the "trigger_jobs.sh" script will check your jenkins jobs periodically and will trigger a build if any of their tracked repositories has changed.  
+This script will also create any jobs listed in the "workspaces" repo directory that don't have a designated directory in the jenkins "jobs" folder.  If a build was issued, you can see its current progress in the browser.  In addition, the output produced will be saved to the file "cron__log.txt"
+
++ (Optional) Run the trigger script inmediately
+
+  Instead of waiting for cron to run the script you can call it directly.  You must log in as the jenkins user and then run the following from the jenkins home:
+
+        jenkins_config/scripts/trigger_jobs.sh
 
 Jenkins tips
 ==============
