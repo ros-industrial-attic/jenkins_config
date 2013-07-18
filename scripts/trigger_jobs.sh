@@ -23,7 +23,7 @@ for F in ${JENKINS_HOME}/jenkins_config/workspaces/*; do
 	
 	if [ "${F##*~}" == "" ];
 	then
-		echo "temp file found: $F, skipping"
+		echo "temporary file found: $F, skipping"
 		continue
 	fi
 
