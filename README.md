@@ -87,7 +87,7 @@ This script will also create any jobs listed in the "workspaces" repo directory 
         jenkins_config/scripts/trigger_jobs.sh
 
 7. Email setup (Optional)
-==============
+-------------
 
 The automatically created jenkins jobs aren't configured to send emails after each build.  In order to have jenkins send email notifications after each build open jenkins from a browser and do the following:
 
@@ -107,7 +107,9 @@ Reply-To Address - noreply@gmail.com
 Charset - UTF-8
 
 + Hit "Save" or "Apply" in order to save changes.
+
 + In your jenkins job go to: Configure -> Add post build-action-> E-mail Notification
+
 + Populate the "Recipients" text box with the email addresses that you would like jenkins to send notifications to.  
 
 >#####Note:  
@@ -118,7 +120,7 @@ Creating new jenkins jobs
 ==============
 + In order to create a new jenkins job, a "my_new_job.rosinstall" file needs to be added to the "workpaces" directory of the repo.  The new job will be named the same as the file without the ".rosinstall" extension and must list each tracked repo as in the following example:
 
-##### my___new_job.rosinstall:  
+##### my_new_job.rosinstall:  
         - git: {local-name: src/great_repo, version: stable-branch, uri: 'https://github.com/my_repos/great_repo.git'}  
         - git: {local-name: src/really_cool_repo, version: awesome-branch, uri: 'https://github.com/my_repos/really_cool_repo.git'}  
         - git: {local-name: src/broken_repo, version: broken-branch, uri: 'https://github.com/my_repos/broken_repo.git'}  
