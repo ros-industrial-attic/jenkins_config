@@ -1,3 +1,4 @@
 - git: {local-name: src/industrial_core, version: groovy-devel, uri: 'https://github.com/ros-industrial/industrial_core.git'}
 - git: {local-name: src/abb, version: groovy-devel, uri: 'https://github.com/ros-industrial/abb.git'}
 - git: {local-name: src/motoman, version: groovy-devel, uri: 'https://github.com/ros-industrial/motoman.git'}
+- git: {local-name: src/industrial_experimental, version: groovy-devel, uri: 'https://github.com/ros-industrial/industrial_experimental.git'}
