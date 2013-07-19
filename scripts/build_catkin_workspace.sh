@@ -7,9 +7,14 @@ SETUP_FILE=$WORKSPACE"/setup.bash"
 ROS_INSTALL_FILE=${JENKINS_HOME}/jenkins_config/workspaces/${JOB_NAME}.rosinstall
 
 # merging workspace file
-echo "merging workspace file $ROS_INSTALL_FILE"
-cd ${WORKSPACE}
-rosws merge ${ROS_INSTALL_FILE} -r -y
+if [ -f $ROS_INSTALL_FILE ];
+then
+	echo "merging workspace file $ROS_INSTALL_FILE"
+	cd ${WORKSPACE}
+	rosws merge ${ROS_INSTALL_FILE} -r -y
+else
+	echo "workspace .rosinstall file not found, skip merge"
+fi
 
 #sourcing setup file
 echo "sourcing setup"
