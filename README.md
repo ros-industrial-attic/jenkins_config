@@ -15,7 +15,18 @@ Installation steps
 
 1. Install jenkins
 --------------
+
++	Go to "http://pkg.jenkins-ci.org/debian-stable/" and download the "jenkins_1.509.2_all.deb" package to a local directory
++	Open a terminal and do the following:
+
+		sudo dpkg -i /path/to/debian/jenkins_1.509.2_all.deb
+		sudo apt-get install -f 
+		
++	Note: This installation procedure is preferred for now since a required plugin is incompatible with the latest version of jenkins.
+When this issue is fixed then installing jenkins can be done as follows:
+
 		sudo apt-get install jenkins
+
 
 2. Install associated tools
 -------------
@@ -35,8 +46,6 @@ Installation steps
 	+	Manage Jenkins -> Manage Plugins
 
 +	Install the plugins listed below: 
-	+	GitHub Plugin
-	+	Jenkins Multiple SCMs plugin
 	+	Warnings plugin
 	+	Static Code Analysis Plug-ins
 	+	Plot Plugin
@@ -44,13 +53,13 @@ Installation steps
 	+	Cppcheck Plugin
 
 
-5. Configure git plugin user credentials
+5. Configure jenkins
 -------------
 +	From jenkins home page go to: 
 	+	Manage Jenkins -> Configure System
-+	In the "Global Config user.name Value" textbox in the "Git plugin" section enter "jenkins"
-+	In the "Global Config user.email Value" textbox in the "Git plugin" section enter "jenkins@domain.com"
-+	Hit the "Save" or "Apply" buttom at the end of the page.
++	Under "Home directory" hit the "Advanced..." button
++	Set the "Workspace Root Directory" as "${ITEM_ROOTDIR}/workspace"
++	Set the "Build Record Root Directory" as "${ITEM_ROOTDIR}/build"
 
 
 6. Installing the "jenkins_config" repo
