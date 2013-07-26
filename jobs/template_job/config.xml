@@ -37,7 +37,7 @@ source $JOB_SCRIPTS_PATH&quot;/run_cppcheck.bash&quot; $WORKSPACE&quot;/src&quot
     </hudson.tasks.Shell>
   </builders>
   <publishers>
-    <hudson.plugins.warnings.WarningsPublisher plugin="warnings@4.26">
+    <hudson.plugins.warnings.WarningsPublisher plugin="warnings@4.27">
       <healthy></healthy>
       <unHealthy></unHealthy>
       <thresholdLimit>low</thresholdLimit>
@@ -46,7 +46,7 @@ source $JOB_SCRIPTS_PATH&quot;/run_cppcheck.bash&quot; $WORKSPACE&quot;/src&quot
       <canRunOnFailed>false</canRunOnFailed>
       <useStableBuildAsReference>false</useStableBuildAsReference>
       <useDeltaValues>false</useDeltaValues>
-      <thresholds plugin="analysis-core@1.49">
+      <thresholds plugin="analysis-core@1.50">
         <unstableTotalAll></unstableTotalAll>
         <unstableTotalHigh></unstableTotalHigh>
         <unstableTotalNormal></unstableTotalNormal>
@@ -65,7 +65,7 @@ source $JOB_SCRIPTS_PATH&quot;/run_cppcheck.bash&quot; $WORKSPACE&quot;/src&quot
           <parserName>GNU Compiler 4 (gcc)</parserName>
         </hudson.plugins.warnings.ConsoleParser>
         <hudson.plugins.warnings.ConsoleParser>
-          <parserName>CppLint</parserName>
+          <parserName>GNU Compiler 3 (gcc)</parserName>
         </hudson.plugins.warnings.ConsoleParser>
         <hudson.plugins.warnings.ConsoleParser>
           <parserName>GNU Make + GNU Compiler (gcc)</parserName>
@@ -169,8 +169,8 @@ source $JOB_SCRIPTS_PATH&quot;/run_cppcheck.bash&quot; $WORKSPACE&quot;/src&quot
             <hudson.plugins.violations.TypeConfig>
               <type>cpplint</type>
               <min>10</min>
-              <max>999</max>
-              <unstable>999</unstable>
+              <max>20</max>
+              <unstable>40</unstable>
               <usePattern>false</usePattern>
               <pattern>cpplint_warnings.txt</pattern>
             </hudson.plugins.violations.TypeConfig>
