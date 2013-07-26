@@ -5,6 +5,7 @@ export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:$PATH
 JENKINS_HOME=/var/lib/jenkins
 SCRIPTS_PATH=${JENKINS_HOME}/jenkins_config/scripts
 JENKINS_CLI=${JENKINS_HOME}/jenkins-cli.jar
+export JENKINS_CMD="java -jar "${JENKINS_CLI}" -s http://localhost:8080"
 
 echo "updating jenkins_config repository"
 cd ${JENKINS_HOME}/jenkins_config && git pull #&>/dev/null
