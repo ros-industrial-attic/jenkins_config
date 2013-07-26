@@ -22,8 +22,8 @@ Installation steps
 		sudo dpkg -i /path/to/debian/jenkins_1.509.2_all.deb
 		sudo apt-get install -f 
 		
-+	Note: This installation procedure is preferred for now since a required plugin is incompatible with the latest version of jenkins.
-When this issue is fixed then installing jenkins can be done as follows:
++	Note: This installation procedure is preferred for now since a required plugin (plot plugin) is incompatible with the latest 
+version of jenkins (version 1.524 ).  When this issue is fixed then installing jenkins should be done as follows:
 
 		sudo apt-get install jenkins
 
