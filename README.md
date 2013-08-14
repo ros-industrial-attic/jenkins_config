@@ -96,6 +96,7 @@ This script will also create any jobs listed in the "workspaces" repo directory 
         jenkins_config/scripts/trigger_jobs.sh
 
 7. User Controls (Optional)
+-------------
 If access controls or other security are used on the jenkins server, then some care must be taken to ensure that the job scripts run correctly.  
 
 Credentials are required in order to create jobs.  For a terminal session, credentials can be entered using the jenkins login command
