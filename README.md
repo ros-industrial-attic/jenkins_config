@@ -95,7 +95,16 @@ This script will also create any jobs listed in the "workspaces" repo directory 
 
         jenkins_config/scripts/trigger_jobs.sh
 
-7. Email setup (Optional)
+7. User setlup (Optional)
+If access controls or other security are used on the jenkins server, then some care must be taken to ensure that the job scripts run correctly.  
+
+Credentials are required in order to create jobs.  For a terminal session credentials can be entered using the jenkins login command
+cd
+java -jar jenkins-cli.jar -s login --username <user> --password <pass>
+. ./jenkins_config/scripts/trigger_jobs.sh
+
+
+8. Email setup (Optional)
 -------------
 
 The automatically created jenkins jobs aren't configured to send emails after each build.  In order to have jenkins send email notifications after each build open jenkins from a browser and do the following:
