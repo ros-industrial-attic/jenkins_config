@@ -75,8 +75,14 @@ version of jenkins (version 1.524 ).  When this issue is fixed then installing j
         cd
         git clone https://github.com/ros-industrial/jenkins_config.git jenkins_config
 
-+ Switch to appropriate git branch (required for projects like ros-industrial that have a different workspace config than the default jenkins setup)
++ Change git configuration
 	
+        cd jenkins_config
+        git config core.fileMode false
+
+
++ Switch to appropriate git branch (required for projects like ros-industrial that have a different workspace config than the default jenkins setup)
+
         git checkout <branch_name>
 
 
