@@ -130,6 +130,15 @@ $JOB_SCRIPTS_PATH&quot;/build_catkin_workspace.sh&quot;</command>
         </configGraph>
       </cppcheckConfig>
     </org.jenkinsci.plugins.cppcheck.CppcheckPublisher>
+    <hudson.plugins.performance.PerformancePublisher plugin="performance@1.8">
+      <errorFailedThreshold>1</errorFailedThreshold>
+      <errorUnstableThreshold>-1</errorUnstableThreshold>
+      <parsers>
+        <hudson.plugins.performance.JUnitParser>
+          <glob>build/test_results/**/*.xml</glob>
+        </hudson.plugins.performance.JUnitParser>
+      </parsers>
+    </hudson.plugins.performance.PerformancePublisher>
     <hudson.plugins.violations.ViolationsPublisher plugin="violations@0.7.11">
       <config>
         <suppressions class="sorted-set"/>
