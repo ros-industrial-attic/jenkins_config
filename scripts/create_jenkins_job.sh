@@ -17,7 +17,7 @@ then
 	java -jar ${JENKINS_CLI} -s http://localhost:8080 reload-configuration
 
 	echo "Created new jenkins job $JOB_NAME"
-else
+#else
 	# checking job current configuration
 	#config=$(java -jar ${JENKINS_CLI} -s http://localhost:8080 get-job ${JOB_NAME})
 
