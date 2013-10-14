@@ -14,29 +14,12 @@
   <builders>
     <hudson.tasks.Shell>
       <command>#!/bin/bash
-echo &quot;Job name:    &quot;$JOB_NAME
-echo &quot;Workspace:   &quot;$WORKSPACE
 
 #path to scripts directory
 JOB_SCRIPTS_PATH=/var/lib/jenkins/jenkins_config/scripts
 
-# update catkin ws
-$JOB_SCRIPTS_PATH&quot;/update_catkin_workspace.sh&quot;
-
-# Cpplint
-$JOB_SCRIPTS_PATH&quot;/run_cpplint.bash&quot; $WORKSPACE&quot;/src&quot;
-
-# Counting lines of code/comments
-$JOB_SCRIPTS_PATH&quot;/run_codecount.bash&quot; $WORKSPACE&quot;/src&quot;
-
-# CPP check
-$JOB_SCRIPTS_PATH&quot;/run_cppcheck.bash&quot; $WORKSPACE&quot;/src&quot;
-
-# Coverage
-#source $WORKSPACE&quot;/../scripts/run_gcorv.bash&quot; $WORKSPACE&quot;/src&quot;
-
-# build catkin ws
-$JOB_SCRIPTS_PATH&quot;/build_catkin_workspace.sh&quot;</command>
+# run all build scripts
+$JOB_SCRIPTS_PATH&quot;/run_build_scripts.sh&quot;</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
@@ -130,6 +113,15 @@ $JOB_SCRIPTS_PATH&quot;/build_catkin_workspace.sh&quot;</command>
         </configGraph>
       </cppcheckConfig>
     </org.jenkinsci.plugins.cppcheck.CppcheckPublisher>
+    <hudson.plugins.performance.PerformancePublisher plugin="performance@1.8">
+      <errorFailedThreshold>1</errorFailedThreshold>
+      <errorUnstableThreshold>-1</errorUnstableThreshold>
+      <parsers>
+        <hudson.plugins.performance.JUnitParser>
+          <glob>build/test_results/**/*.xml</glob>
+        </hudson.plugins.performance.JUnitParser>
+      </parsers>
+    </hudson.plugins.performance.PerformancePublisher>
     <hudson.plugins.violations.ViolationsPublisher plugin="violations@0.7.11">
       <config>
         <suppressions class="sorted-set"/>
