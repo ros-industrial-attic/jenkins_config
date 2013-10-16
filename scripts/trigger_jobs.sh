@@ -18,6 +18,9 @@ then
 	chmod a+rwx ${JENKINS_CLI}
 fi
 
+# install required jenkins plugins
+${SCRIPTS_PATH}/install_plugins.sh
+
 
 # creating jobs
 for F in ${JENKINS_HOME}/jenkins_config/workspaces/*; do
