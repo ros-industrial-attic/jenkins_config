@@ -2,7 +2,7 @@
 # Cpplint
 
 #path to scripts directory
-#JOB_SCRIPTS_PATH=${JENKINS_HOME}/jobs/${JOB_NAME}/scripts
+SCRIPTS_PATH=${JENKINS_HOME}/jenkins_config/scripts
 
 echo "===== Executing Cpplint ====="
 
@@ -10,7 +10,7 @@ for ROS_PATH in  "$@";
 do
 
 	echo -e "\tExamining path: "$ROS_PATH
-	python ${JOB_SCRIPTS_PATH}/cpplint.py  `find $ROS_PATH -regex '.*\.\(cpp\|h\)' | grep -v /external/ | grep -v /test/ | grep -v /build/ | grep -v /msg_gen/ | grep -v /liboxts_rt/ | grep -v /cfg/cpp/ | grep -v /srv_gen/` 2> ${WORKSPACE}/cpplint_warnings_absolute.txt
+	python ${SCRIPTS_PATH}/cpplint.py  `find $ROS_PATH -regex '.*\.\(cpp\|h\)' | grep -v /external/ | grep -v /test/ | grep -v /build/ | grep -v /msg_gen/ | grep -v /liboxts_rt/ | grep -v /cfg/cpp/ | grep -v /srv_gen/` 2> ${WORKSPACE}/cpplint_warnings_absolute.txt
 
 	### Ignore new-line curly brace warnings.
 	grep -v '{ should almost always be at the end of the previous line' ${WORKSPACE}/cpplint_warnings_absolute.txt > ${WORKSPACE}/cpplint_filter1.txt
@@ -25,7 +25,7 @@ done
 
 # Make all paths relative so jenkins can find them.
 echo -e "\tChanging Cpplint absolute paths to relative paths"
-sed "s:"$WORKSPACE"/src:trunk:g" ${WORKSPACE}/cpplint.txt > ${WORKSPACE}/cpplint_warnings.txt
+sed "s:"$WORKSPACE"/src:src:g" ${WORKSPACE}/cpplint.txt > ${WORKSPACE}/cpplint_warnings.txt
 
 #clenup
 rm ${WORKSPACE}/cpplint_warnings_absolute.txt
