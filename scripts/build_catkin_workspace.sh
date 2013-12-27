@@ -11,6 +11,6 @@ source $SETUP_FILE
 
 echo "============ Building catkin workspace ============"
 catkin_make clean
-catkin_make 
+catkin_make run_tests 
 
 
