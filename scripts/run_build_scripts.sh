@@ -18,7 +18,10 @@ $JOB_SCRIPTS_PATH"/run_codecount.bash" $WORKSPACE"/src"
 $JOB_SCRIPTS_PATH"/run_cppcheck.bash" $WORKSPACE"/src"
 
 # Coverage
-#source $WORKSPACE"/../scripts/run_gcorv.bash" $WORKSPACE"/src"
+source $WORKSPACE"/../scripts/run_gcorv.bash" $WORKSPACE"/src"
+
+# build catkin ws
+$JOB_SCRIPTS_PATH"/clean_catkin_workspace.sh"
 
 # build catkin ws
 $JOB_SCRIPTS_PATH"/build_catkin_workspace.sh"
