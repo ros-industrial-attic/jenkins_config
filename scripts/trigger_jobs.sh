@@ -9,6 +9,7 @@ export JENKINS_CMD="java -jar "${JENKINS_CLI}" -s http://localhost:8080"
 
 echo "updating jenkins_config repository"
 cd ${JENKINS_HOME}/jenkins_config && git pull #&>/dev/null
+chmod a+rwx -R ${SCRIPTS_PATH}
 
 if [ ! -f $JENKINS_CLI ];
 then
