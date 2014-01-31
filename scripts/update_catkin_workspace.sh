@@ -1,8 +1,5 @@
 #!/bin/bash
-# merge .rosinstall file and the calls rosws to update all repos
-
-# Setup
-source /opt/ros/groovy/setup.bash
+# merge new entries in workspace (.rosinstall) file and update all tracked repos
 
 # variables
 SETUP_FILE=$WORKSPACE"/setup.bash"
@@ -11,6 +8,9 @@ ROS_INSTALL_FILE=${JENKINS_HOME}/jenkins_config/workspaces/${JOB_NAME}.rosinstal
 # merging workspace file
 if [ -f $ROS_INSTALL_FILE ];
 then
+	# reset ros workspace file
+	echo "" > "$WORKSPACE/.rosinstall"
+
 	echo "updating workspace file $ROS_INSTALL_FILE"
 	cd ${WORKSPACE}
 	rosws merge ${ROS_INSTALL_FILE} -r -y

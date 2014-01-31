@@ -1,6 +1,4 @@
 #!/bin/bash
-# Setup
-source /opt/ros/groovy/setup.bash
 
 # variables
 SETUP_FILE=$WORKSPACE"/setup.bash"

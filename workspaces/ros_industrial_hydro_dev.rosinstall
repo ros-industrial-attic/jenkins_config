@@ -4,3 +4,5 @@
 #- git: {local-name: src/motoman, version: groovy-devel, uri: 'https://github.com/ros-industrial/motoman.git'}
 #- git: {local-name: src/universal_robot, version: groovy-devel, uri: 'https://github.com/ros-industrial/universal_robot.git'}
 #- git: {local-name: src/industrial_experimental, version: groovy-devel, uri: 'https://github.com/ros-industrial/industrial_experimental.git'}
+- setup-file:
+    local-name: /opt/ros/hydro/setup.bash
